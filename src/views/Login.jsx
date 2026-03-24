@@ -53,6 +53,9 @@ const Login = () => {
           <Link className="button-reg" to="/register">
             Registrarse
           </Link>
+          <Link className="button-reg" to="/documentacion">
+             Ver documentación del proyecto
+          </Link>
 
 
           {error && <p className="error-form">{error}</p>}

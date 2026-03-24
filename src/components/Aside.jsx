@@ -1,5 +1,8 @@
-import { useContext, useState } from "react"
+
 import { ChatContext } from "../context/ChatContext"
+import { useNavigate } from "react-router-dom"
+import { useContext, useState } from "react"
+
 
 const Aside = () => {
   const [search, setSearch] = useState("")
@@ -10,6 +13,9 @@ const Aside = () => {
     setSearch(event.target.value)
   }
 
+  const { logout } = useContext(ChatContext)
+  const navigate = useNavigate()
+
   const filteredUsers = users.filter((user) => {
     const fullName = `${user.firstName} ${user.lastName}`
     return fullName.toLowerCase().includes(search.toLowerCase())
@@ -17,8 +23,17 @@ const Aside = () => {
 
   return (
     <aside>
-      <h1>Chat</h1>
-
+      <header>
+        <h1>Chats Empresarial</h1>
+        <button className='exit-button'
+          onClick={() => {
+            logout();
+            navigate('/login');
+          }}
+        >
+          Salir
+        </button>
+      </header>
       <input
         className="search"
         type="search"

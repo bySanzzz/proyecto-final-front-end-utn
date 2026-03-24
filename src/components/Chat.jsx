@@ -59,14 +59,6 @@ const Chat = () => {
           {selectedUser.firstName} {selectedUser.lastName}
         </h2>
 
-        <button className='exit-button'
-          onClick={() => {
-            logout();
-            navigate('/login');
-          }}
-        >
-          Salir
-        </button>
 
       </header>
 
