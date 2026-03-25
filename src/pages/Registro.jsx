@@ -106,7 +106,7 @@ const Registro = () => {
 
           <button className="btn-registro">Registrarse</button>
         </form>
-        <Link className="volver-btn" to="/">
+        <Link className="volver-btn" to="/login">
           Volver al Login
         </Link>
       </section>
