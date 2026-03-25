@@ -77,3 +77,14 @@ npm run dev
 ```
 http://localhost:5173/
 ```
+# Pasos para hacer deploy al proyecto
+
+**Paso 1** Entrá a https://vercel.com/
+
+**Paso 2** Hacé clic en Sign Up y conectate con tu GitHub (recomendado) o GitLab/Bitbucket.
+
+**Paso 3** Permití el acceso a tus repositorios cuando te lo pida.
+
+**Paso 4** Importa el proyecto que te interese
+
+**Paso 5** Te creara ya tu link para que puedas visualizar tu Vercel (En mi caso, https://proyecto-final-front-end-utn.vercel.app/)
