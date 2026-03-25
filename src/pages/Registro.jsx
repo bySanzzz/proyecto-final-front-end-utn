@@ -1,6 +1,7 @@
 import { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { ChatContext } from "../context/ChatContext"
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2"
 
 const Registro = () => {
@@ -71,13 +72,13 @@ const Registro = () => {
       text: "Ahora puedes iniciar sesión"
     })
 
-    navigate("/")
+    navigate("/login")
   }
 
   return (
     <div className="main-container">
       <section className="section-registro">
-        <h2>Crear cuenta</h2>
+        <h2>Crear cuenta 📝</h2>
 
         <form onSubmit={handleSubmit}>
           <input
@@ -105,7 +106,11 @@ const Registro = () => {
 
           <button className="btn-registro">Registrarse</button>
         </form>
+        <Link className="volver-btn" to="/">
+          Volver al Login
+        </Link>
       </section>
+      
     </div>
   )
 }

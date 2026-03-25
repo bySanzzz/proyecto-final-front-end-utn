@@ -150,7 +150,7 @@ li img {
 }
 
 .me {
-  background: #26ff64;
+  background: #128c7e;
   color: black;
   align-self: flex-end;
   border-bottom-right-radius: 4px;
@@ -186,15 +186,16 @@ li img {
 
 .chat-input button {
   padding: 8px 14px;
-  background: #38bdf8;
+  background: #128c7e;
   color: black;
   font-weight: bold;
   cursor: pointer;
+  border-radius: 20px;
 }
 
 
 a {
-  color: #00ffcc;
+  color: #ffffff;
   text-decoration: none;
   
 }
@@ -207,7 +208,7 @@ a:hover {
   text-align: center;
 }
 .container {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 40px auto;
   padding: 25px;
   background: #1e1e2f;
@@ -368,8 +369,22 @@ a:hover {
 
 
   .back-btn {
-    display: block !important;
-  }
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #128c7e;   
+  color: white;                 
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;           
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.back-btn:hover {
+  background-color: #0b5d4b;    
+  transform: scale(1.05);       
+}
 
   .not-found-chat {
      display: none;

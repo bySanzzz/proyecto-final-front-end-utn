@@ -24,14 +24,14 @@ const Aside = () => {
   return (
     <aside>
       <header>
-        <h1>Chats Empresarial</h1>
+        <h1>Chats Empresarial 👷</h1>
         <button className='exit-button'
           onClick={() => {
             logout();
             navigate('/login');
           }}
         >
-          Salir
+          ⬅
         </button>
       </header>
       <input
