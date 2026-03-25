@@ -8,32 +8,14 @@ export const Documentacion = () => {
 
         <h2>Explicación del proyecto</h2>
         <p>
-          Mi aplicación consiste en un clon de WhatsApp orientado a un entorno
-          empresarial. En esta plataforma los usuarios pueden iniciar sesión
-          utilizando su correo electrónico (Gmail) y su contraseña. En caso de
-          no tener una cuenta, el sistema permite registrarse ingresando sus
-          datos personales. Una vez dentro de la aplicación, los usuarios pueden
-          acceder al sistema de chat para comunicarse con otros contactos.
-        </p>
+Mi aplicación es un clon empresarial de WhatsApp donde los usuarios pueden registrarse o iniciar sesión con su correo y contraseña, y luego utilizar el chat para comunicarse con otros contactos.
+</p>
 
         <h2>Partes principales de la aplicación</h2>
-        <ul>
-          <li>Login</li>
-          <li>Registro</li>
-          <li>Chat</li>
-          <li>Aside (lista de contactos)</li>
-          <li>Documentación del proyecto</li>
-        </ul>
-
-        <h2>Tecnologías utilizadas</h2>
-        <ul>
-          <li>React</li>
-          <li>CSS</li>
-          <li>LocalStorage</li>
-          <li>DeepWiki</li>
-          <li>README</li>
-          <li>Vercel</li>
-        </ul>
+        <p>
+El proyecto cuenta con los siguientes componentes: Login, Registro, Chat, Aside (lista de contactos) y Documentación del proyecto. 
+Se utilizaron las siguientes tecnologías: React, CSS, LocalStorage, DeepWiki, README y Vercel.
+</p>
 
         <h2>Decisiones de desarrollo tomadas</h2>
         <p>
@@ -52,15 +34,7 @@ export const Documentacion = () => {
           mejorar incorporando nuevas herramientas y más funcionalidades.
         </p>
 
-        <h2>Dificultades encontradas</h2>
-        <p>
-          Una de las mayores dificultades durante el desarrollo del proyecto fue
-          la implementación del sistema de registro de usuarios. Al no contar
-          con una base de datos propia, fue necesario investigar diferentes
-          alternativas para poder almacenar la información de los usuarios.
-          Durante este proceso también consulté con compañeros para encontrar la
-          mejor forma de resolverlo.
-        </p>
+        
 
         <Link className="volver-btn" to="/">
           Volver al Login

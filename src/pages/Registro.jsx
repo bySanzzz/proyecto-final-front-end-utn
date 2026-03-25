@@ -1,37 +1,52 @@
 import { useState, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import { ChatContext } from "../context/ChatContext"
+import Swal from "sweetalert2"
 
 const Registro = () => {
   const [nombre, setNombre] = useState("")
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
-  const [error, setError] = useState("")
 
   const { register } = useContext(ChatContext)
   const navigate = useNavigate()
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    setError("")
 
     if (!nombre || !email || !password) {
-      setError("Todos los campos son obligatorios")
+      Swal.fire({
+        icon: "error",
+        title: "Campos incompletos",
+        text: "Todos los campos son obligatorios"
+      })
       return
     }
 
     if (nombre.trim().length < 3) {
-      setError("El nombre debe tener al menos 3 caracteres")
+      Swal.fire({
+        icon: "error",
+        title: "Nombre inválido",
+        text: "El nombre debe tener al menos 3 caracteres"
+      })
       return
     }
 
     if (!email.includes("@")) {
-      setError("El email no es válido")
+      Swal.fire({
+        icon: "error",
+        title: "Email inválido",
+        text: "El email no es válido"
+      })
       return
     }
 
     if (password.length < 6) {
-      setError("La contraseña debe tener mínimo 6 caracteres")
+      Swal.fire({
+        icon: "error",
+        title: "Contraseña inválida",
+        text: "La contraseña debe tener mínimo 6 caracteres"
+      })
       return
     }
 
@@ -42,9 +57,19 @@ const Registro = () => {
     })
 
     if (!response) {
-      setError("El usuario ya existe")
+      Swal.fire({
+        icon: "error",
+        title: "Usuario existente",
+        text: "El usuario ya existe"
+      })
       return
     }
+
+    Swal.fire({
+      icon: "success",
+      title: "Cuenta creada",
+      text: "Ahora puedes iniciar sesión"
+    })
 
     navigate("/")
   }
@@ -79,8 +104,6 @@ const Registro = () => {
           />
 
           <button className="btn-registro">Registrarse</button>
-
-          {error && <p className="error-form">{error}</p>}
         </form>
       </section>
     </div>

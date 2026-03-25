@@ -1,36 +1,46 @@
 import { useState, useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { ChatContext } from '../context/ChatContext';
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
+
 
   const { login } = useContext(ChatContext);
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    if (!email || !password) {
-      setError('Completa todos los campos');
-      return;
-    }
+  if (!email || !password) {
+    Swal.fire({
+      icon: "error",
+      title: "Campos incompletos",
+      text: "Debes completar todos los campos",
+    });
+    return;
+  }
 
-    const response = login({ email, password });
+  const response = login({ email, password });
 
-    if (!response) {
-      setError('Email o contraseña incorrectos');
-      return;
-    }
+  if (!response) {
+    Swal.fire({
+      icon: "error",
+      title: "Error al iniciar sesión",
+      text: "No se encuentra registrado en el Sistema",
+    });
+    return;
+  }
 
-    navigate('/');
-  };
+  navigate("/");
+};
 
   return (
     <div className="main-container">
       <section className="section-login">
+        <h2>Clon de WhatsApp</h2>
         <h2>Iniciar sesión</h2>
 
         <form onSubmit={handleSubmit}>
@@ -58,7 +68,7 @@ const Login = () => {
           </Link>
 
 
-          {error && <p className="error-form">{error}</p>}
+          
         </form>
       </section>
     </div>

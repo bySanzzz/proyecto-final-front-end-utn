@@ -76,6 +76,7 @@ const Chat = () => {
 
       <div className="chat-input">
         <input
+          placeholder='Escribe un mensaje'
           value={text}
           onChange={(event) => setText(event.target.value)}
           onKeyDown={(event) => event.key === 'Enter' && sendMessage()}
